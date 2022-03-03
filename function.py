@@ -96,17 +96,17 @@ def clean_word(raw_review, lem = True , Porter=True):
 class SupervisedModel:
 
     def __init__(self):
-        tf_model = "./Models/words_tf_model.joblib"
-        vocabulary = "./Models/words_vocabulary.joblib"       
-        pca_model = "./Models/pca_model.joblib"
-        svm_model = "./Models/svm_model.joblib"
-        mlb_model = "./Models/mlb_model.joblib"
+        tf_model_tfidf = "./Models/words_model_tfidf.joblib"
+        vocabulary_tfidf = "./Models/words_vocabulary_tfidf.joblib"       
+        pca_model_tfidf = "./Models/pca_model_tfidf.joblib"
+        svm_model_tfidf = "./Models/svm_model_tfidf.joblib"
+        mlb_model_tfidf = "./Models/mlb_model_tfidf.joblib"
 
-        self.svm_model = load(svm_model)
-        self.mlb_model = load(mlb_model)
-        self.tf_model = load(tf_model)
-        self.pca_model = load(pca_model)
-        self.vocabulary = load(vocabulary)
+        self.svm_model = load(svm_model_tfidf)
+        self.mlb_model = load(mlb_model_tfidf)
+        self.tf_model = load(tf_model_tfidf)
+        self.pca_model = load(pca_model_tfidf)
+        self.vocabulary = load(vocabulary_tfidf)
 
 
     def predict_tags(self, text):
